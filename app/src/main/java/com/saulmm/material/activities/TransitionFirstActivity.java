@@ -10,11 +10,13 @@ import android.view.Gravity;
 import android.view.View;
 
 import com.saulmm.material.R;
+import com.saulmm.material.myapplication.RegistrationMainActivity;
 
 public class TransitionFirstActivity extends Activity {
 
     private View mFabButton;
     private View mHeader;
+    private View mLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class TransitionFirstActivity extends Activity {
 
         mFabButton = findViewById(R.id.fab_button);
         mHeader = findViewById(R.id.activity_transition_header);
+        mLogo = findViewById(R.id.imageView);
 
         Slide slideExitTransition = new Slide(Gravity.BOTTOM);
         slideExitTransition.excludeTarget(android.R.id.navigationBarBackground, true);
@@ -38,7 +41,18 @@ public class TransitionFirstActivity extends Activity {
             TransitionSecondActivity.class);
 
         ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(
-            TransitionFirstActivity.this,Pair.create(mFabButton, "fab"), Pair.create(mHeader, "holder1"));
+                TransitionFirstActivity.this, Pair.create(mFabButton, "fab"), Pair.create(mHeader, "holder1"), Pair.create(mLogo,"logo"));
+
+        startActivity(i, transitionActivityOptions.toBundle());
+    }
+
+    public void onFabPressedEvents(View view) {
+
+        Intent i  = new Intent (TransitionFirstActivity.this,
+                RegistrationMainActivity.class);
+
+        ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(
+                TransitionFirstActivity.this, Pair.create(mFabButton, "fab"), Pair.create(mHeader, "holder1"), Pair.create(mLogo,"logo"));
 
         startActivity(i, transitionActivityOptions.toBundle());
     }

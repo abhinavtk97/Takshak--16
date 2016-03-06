@@ -27,6 +27,7 @@
     </string-array>
 
     <string name="title_activity_elevation_sample">ElevationSampleActivity</string>
-    <string name="Register">Register</string>
+    <string name="Registration">Registration</string>
+    <string name="Eventsandprogrammes"><![CDATA[Events & Programmes]]></string>
 
 </resources>

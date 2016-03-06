@@ -11,5 +11,7 @@
     <dimen name="button_press_elevation">4dp</dimen>
     <dimen name="navigation_drawer_width">240dp</dimen>
     <dimen name="head_size">250dp</dimen>
+    <dimen name="NEW_head_size">50dp</dimen>
+
 
 </resources>

@@ -2,22 +2,22 @@
 <resources>
 
     <!-- Theme colors -->
-    <color name="theme_light">#F48FB1</color>
-    <color name="theme_default_primary">#7B1FA2</color>
-    <color name="theme_window_background">#2A2A2A</color>
-    <color name="accent">#7B1FA2</color>
-    <color name="gray_row_color">#ff515252</color>
+    <color name="theme_light">#F48FB1</color> //nil
+    <color name="theme_default_primary">#03a9f4</color> //nil
+    <color name="theme_window_background">#0288d1</color> //nil
+    <color name="accent">#68efad</color> //nil
+    <color name="gray_row_color">#ff515252</color> //nil
 
 
     <!-- Dialer theme -->
-    <color name="dialer_call">#9C27B0</color>
-    <color name="theme_dialer_high">#7B1FA2</color>
-    <color name="theme_dialer_primary">#9C27B0</color>
-    <color name="theme_dialer_accent">#FFF</color>
+    <color name="dialer_call">#0288d1</color> //nil
+    <color name="theme_dialer_high">#0288d1</color> //nil
+    <color name="theme_dialer_primary">#03a9f4</color> //nil
+    <color name="theme_dialer_accent">#FFF</color> //nil
 
     <!-- Reveal transition colors -->
-    <color name="color_set_1_primary">#7B1FA2</color>
-    <color name="color_set_1_accent">#448AFF</color>
+    <color name="color_set_1_primary">#691A99</color> //navigation
+    <color name="color_set_1_accent">#68EFAD</color> //accent
 
     <color name="color_set_2_primary">#448AFF</color>
     <color name="color_set_2_accent">#673AB7</color>
