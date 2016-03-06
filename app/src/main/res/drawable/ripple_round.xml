@@ -6,7 +6,7 @@
 
     <item>
         <shape android:shape="oval">
-            <solid android:color="?android:colorAccent"/>
+            <solid android:color="@color/color_set_1_accent"/>
         </shape>
     </item>
 </ripple>

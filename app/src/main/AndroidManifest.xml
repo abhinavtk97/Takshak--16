@@ -19,7 +19,8 @@
         <activity
             android:name=".activities.TransitionSecondActivity"
             android:theme="@style/TransitionSampleSecondActivity" />
-        <activity android:name=".myapplication.RegistrationMainActivity"></activity>
+        <activity android:name=".myapplication.RegistrationMainActivity"
+            android:theme="@style/TransitionSampleSecondActivity"/>
     </application>
 
 </manifest>
