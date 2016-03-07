@@ -30,4 +30,7 @@
     <string name="Registration">Registration</string>
     <string name="Eventsandprogrammes"><![CDATA[Events & Programmes]]></string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

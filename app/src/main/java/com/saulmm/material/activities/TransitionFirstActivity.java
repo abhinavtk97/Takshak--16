@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.saulmm.material.R;
 import com.saulmm.material.myapplication.RegistrationMainActivity;
+import com.saulmm.material.myapplication.ViewReg;
 
 public class TransitionFirstActivity extends Activity {
 
@@ -38,7 +39,7 @@ public class TransitionFirstActivity extends Activity {
     public void onFabPressed(View view) {
 
         Intent i  = new Intent (TransitionFirstActivity.this,
-            TransitionSecondActivity.class);
+            RegistrationMainActivity.class);
 
         ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(
                 TransitionFirstActivity.this, Pair.create(mFabButton, "fab"), Pair.create(mHeader, "holder1"), Pair.create(mLogo,"logo"));
@@ -49,11 +50,17 @@ public class TransitionFirstActivity extends Activity {
     public void onFabPressedEvents(View view) {
 
         Intent i  = new Intent (TransitionFirstActivity.this,
-                RegistrationMainActivity.class);
+                Events.class);
 
         ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(
                 TransitionFirstActivity.this, Pair.create(mFabButton, "fab"), Pair.create(mHeader, "holder1"), Pair.create(mLogo,"logo"));
 
         startActivity(i, transitionActivityOptions.toBundle());
     }
+
+
+
+
+
+
 }

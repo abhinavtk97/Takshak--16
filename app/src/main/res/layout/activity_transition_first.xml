@@ -101,6 +101,7 @@
             android:textColor="#212121"
             android:gravity="center"
             android:layout_above="@+id/button_register" />
+
             </RelativeLayout>
 
         </android.support.v7.widget.CardView>

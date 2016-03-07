@@ -1,51 +1,72 @@
 package com.saulmm.material.myapplication;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
 import android.transition.Slide;
+import android.util.Pair;
 import android.view.Gravity;
-import android.widget.ImageView;
+import android.view.View;
 import android.widget.LinearLayout;
-
 import com.saulmm.material.R;
 
-import net.glxn.qrgen.QRCode;
-import net.glxn.qrgen.image.ImageType;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
+import com.saulmm.material.activities.TransitionSecondActivity;
+
 
 public class RegistrationMainActivity extends Activity {
-
-    private static final int SCALE_DELAY = 30;
-    private LinearLayout rowContainer;
-
+    private View mFabButton;
+    private View mHeader;
+    private View mLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_main);
 
-        rowContainer = (LinearLayout) findViewById(R.id.row_container2);
+        mFabButton = findViewById(R.id.fab_button);
+        mHeader = findViewById(R.id.activity_transition_header);
+        mLogo = findViewById(R.id.imageView);
+
         Slide slideExitTransition = new Slide(Gravity.BOTTOM);
         slideExitTransition.excludeTarget(android.R.id.navigationBarBackground, true);
         slideExitTransition.excludeTarget(android.R.id.statusBarBackground, true);
-
-        File f = QRCode.from("https://github.com/kenglxn/QRGen").to(ImageType.JPG).file();
-
-        Bitmap myBitmap = BitmapFactory.decodeFile(f.getAbsolutePath());
-
-        ImageView myImage = (ImageView) findViewById(R.id.imageView1);
-        myImage.setImageBitmap(myBitmap);
-
-
-
-
-
-
+        slideExitTransition.excludeTarget(R.id.activity_transition_header1, true);
+        getWindow().setExitTransition(slideExitTransition);
 
     }
-}
+    public void onFabPressedReg(View view) {
+
+        Intent i  = new Intent (RegistrationMainActivity.this,
+                TransitionSecondActivity.class);
+        ActivityOptions option =ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(mFabButton, "fab"),
+                Pair.create(mLogo, "logo"));
+
+        startActivity(i,option.toBundle());
+    }
+    public void onFabPressedReg1(View view) {
+
+        Intent i  = new Intent (this,
+                ViewReg.class);
+
+        ActivityOptions option =ActivityOptions.makeSceneTransitionAnimation(this,Pair.create(mFabButton,"fab"),
+                Pair.create(mLogo,"logo"));
+
+        startActivity(i,option.toBundle());
+    }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
 

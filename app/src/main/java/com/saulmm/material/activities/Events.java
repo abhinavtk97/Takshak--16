@@ -16,25 +16,20 @@ import com.saulmm.material.R;
 import com.saulmm.material.utils.AnimatorAdapter;
 import com.saulmm.material.utils.TransitionAdapter;
 
-public class TransitionSecondActivity extends Activity {
 
+public class Events extends Activity {
     private static final int SCALE_DELAY = 30;
     private LinearLayout rowContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transition_second);
-
+        setContentView(R.layout.activity_events);
         rowContainer = (LinearLayout) findViewById(R.id.row_container2);
 
-
-
-        Spinner dropdown = (Spinner)findViewById(R.id.spinner);
-        String[] items = new String[]{"Select College","1", "2", "three"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
+        Slide slideExitTransition = new Slide(Gravity.BOTTOM);
+        slideExitTransition.excludeTarget(android.R.id.navigationBarBackground, true);
+        slideExitTransition.excludeTarget(android.R.id.statusBarBackground, true);
 
 
         getWindow().getEnterTransition().addListener(new TransitionAdapter() {
@@ -50,31 +45,10 @@ public class TransitionSecondActivity extends Activity {
 
                     View rowView = rowContainer.getChildAt(i);
                     rowView.animate().setStartDelay(i * SCALE_DELAY)
-                        .scaleX(1).scaleY(1);
+                            .scaleX(1).scaleY(1);
                 }
             }
         });
     }
 
-    @Override
-    public void onBackPressed() {
-
-        for (int i = 0; i < rowContainer.getChildCount(); i++) {
-
-            View rowView = rowContainer.getChildAt(i);
-
-            ViewPropertyAnimator propertyAnimator = rowView.animate()
-                .setStartDelay(i * SCALE_DELAY)
-                .scaleX(0).scaleY(0)
-                .setListener(new AnimatorAdapter() {
-
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-
-                        super.onAnimationEnd(animation);
-                        finishAfterTransition();
-                    }
-                });
-        }
-    }
 }
