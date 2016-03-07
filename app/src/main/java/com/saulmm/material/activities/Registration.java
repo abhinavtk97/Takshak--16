@@ -3,9 +3,7 @@ package com.saulmm.material.activities;
 import android.animation.Animator;
 import android.app.Activity;
 import android.os.Bundle;
-import android.transition.Slide;
 import android.transition.Transition;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.ArrayAdapter;
@@ -16,7 +14,7 @@ import com.saulmm.material.R;
 import com.saulmm.material.utils.AnimatorAdapter;
 import com.saulmm.material.utils.TransitionAdapter;
 
-public class TransitionSecondActivity extends Activity {
+public class Registration extends Activity {
 
     private static final int SCALE_DELAY = 30;
     private LinearLayout rowContainer;
@@ -25,7 +23,7 @@ public class TransitionSecondActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transition_second);
+        setContentView(R.layout.activity_registration);
 
         rowContainer = (LinearLayout) findViewById(R.id.row_container2);
 

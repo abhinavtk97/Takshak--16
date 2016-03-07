@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.saulmm.material.myapplication.RegistrationMainActivity">
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".myapplication.RegistrationMain">
 
 
     <android.support.v7.widget.Toolbar
@@ -14,6 +15,16 @@
         android:transitionName="holder1"
         android:minHeight="?attr/actionBarSize"
         android:elevation="5dp"/>
+    <android.support.v7.widget.CardView
+        android:id="@+id/activity_transition_header_small"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:transitionName="holder2"
+        android:layout_below="@id/activity_transition_header1"
+        card_view:cardBackgroundColor="#9b26a6"
+        card_view:cardElevation="2dp"
+        card_view:cardCornerRadius="0dp"
+        />
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

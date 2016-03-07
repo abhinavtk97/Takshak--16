@@ -8,17 +8,17 @@ import android.transition.Slide;
 import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.LinearLayout;
 import com.saulmm.material.R;
 
 
-import com.saulmm.material.activities.TransitionSecondActivity;
+import com.saulmm.material.activities.Registration;
 
 
-public class RegistrationMainActivity extends Activity {
+public class RegistrationMain extends Activity {
     private View mFabButton;
     private View mHeader;
     private View mLogo;
+    private View mHeader1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,22 +27,24 @@ public class RegistrationMainActivity extends Activity {
         setContentView(R.layout.activity_registration_main);
 
         mFabButton = findViewById(R.id.fab_button);
-        mHeader = findViewById(R.id.activity_transition_header);
+        mHeader = findViewById(R.id.activity_transition_header1);
         mLogo = findViewById(R.id.imageView);
+        mHeader1=findViewById(R.id.activity_transition_header_small);
 
         Slide slideExitTransition = new Slide(Gravity.BOTTOM);
         slideExitTransition.excludeTarget(android.R.id.navigationBarBackground, true);
         slideExitTransition.excludeTarget(android.R.id.statusBarBackground, true);
-        slideExitTransition.excludeTarget(R.id.activity_transition_header1, true);
+        slideExitTransition.excludeTarget(R.id.activity_transition_header_small, true);
+
         getWindow().setExitTransition(slideExitTransition);
 
     }
     public void onFabPressedReg(View view) {
 
-        Intent i  = new Intent (RegistrationMainActivity.this,
-                TransitionSecondActivity.class);
-        ActivityOptions option =ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(mFabButton, "fab"),
-                Pair.create(mLogo, "logo"));
+        Intent i  = new Intent (RegistrationMain.this,
+                Registration.class);
+        ActivityOptions option =ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(mFabButton, "fab"), Pair.create(mHeader, "holder1"),
+                Pair.create(mLogo, "logo"), Pair.create(mHeader1, "holder2"));
 
         startActivity(i,option.toBundle());
     }
@@ -51,8 +53,8 @@ public class RegistrationMainActivity extends Activity {
         Intent i  = new Intent (this,
                 ViewReg.class);
 
-        ActivityOptions option =ActivityOptions.makeSceneTransitionAnimation(this,Pair.create(mFabButton,"fab"),
-                Pair.create(mLogo,"logo"));
+        ActivityOptions option =ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(mFabButton, "fab"), Pair.create(mHeader, "holder1"),
+                Pair.create(mLogo, "logo"), Pair.create(mHeader1, "holder2"));
 
         startActivity(i,option.toBundle());
     }

@@ -2,9 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MyActivity"
-    >
+    tools:context=".MyActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/activity_transition_header"
@@ -14,6 +14,16 @@
         android:transitionName="holder1"
         android:minHeight="?attr/actionBarSize"
         android:elevation="5dp"/>
+    <android.support.v7.widget.CardView
+        android:id="@+id/activity_transition_header_small"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:transitionName="holder2"
+        android:layout_below="@id/activity_transition_header"
+        card_view:cardBackgroundColor="#9b26a6"
+        card_view:cardElevation="2dp"
+        card_view:cardCornerRadius="0dp"
+        />
 
 
         <LinearLayout

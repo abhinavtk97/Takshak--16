@@ -2,25 +2,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MyActivity"
-    >
+    tools:context=".MyActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/activity_transition_header"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_width="match_parent"
         android:background="#7A1EA1"
         android:transitionName="holder1"
         android:minHeight="150dp"
         android:elevation="5dp"/>
+    <android.support.v7.widget.CardView
+        android:id="@+id/activity_transition_header_small"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:transitionName="holder2"
+        card_view:cardBackgroundColor="#9b26a6"
+        card_view:cardElevation="2dp"
+        card_view:cardCornerRadius="0dp"
+        />
+
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_margin="8dp"
         android:elevation="5dp"
-        android:layout_below="@+id/activity_transition_header">
+        android:layout_below="@+id/activity_transition_header"
+        android:id="@+id/view">
         <LinearLayout
             android:id="@+id/row_container2"
             android:layout_width="match_parent"
@@ -33,10 +44,13 @@
             android:paddingTop="@dimen/activity_vertical_margin"
             android:paddingBottom="@dimen/activity_vertical_margin">
 
-            <ImageView
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/qrcode"/>
+                android:id="@+id/qrcode"
+                android:background="#FFF"
+                android:layout_gravity="center_horizontal"
+                android:onClick="ViewQr"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,8 +77,8 @@
         />
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/imageView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -73,5 +87,17 @@
         android:elevation="5dp"
 
         />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view">
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_below="@+id/view"
+        android:layout_centerHorizontal="true" />
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>

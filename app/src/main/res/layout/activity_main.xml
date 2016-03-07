@@ -36,7 +36,7 @@
         android:id="@+id/activity_transition_header_small"
         android:layout_width="match_parent"
         android:layout_height="@dimen/NEW_head_size"
-        android:transitionName="holder1"
+        android:transitionName="holder2"
         android:layout_below="@id/activity_transition_header"
         card_view:cardBackgroundColor="#9b26a6"
         card_view:cardElevation="2dp"

@@ -2,15 +2,20 @@ package com.saulmm.material.myapplication;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.ClipboardManager;
 import android.transition.Slide;
 import android.transition.Transition;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -24,6 +29,7 @@ public class ViewReg extends Activity {
 
     private static final int SCALE_DELAY = 30;
     private LinearLayout rowContainer;
+    String[] array = {"afvkjfvkgcg","jdfgciycb","vkvkuvuyhc","jdfgciycb","vkvkuvuyhc","jdfgciycb","vkvkuvuyhc","ufuifwfiugwf","fvkhavajk","adgkyuhagdkyhad"};
 
     ImageLoader imgLoader;
     ImageView qrImg;
@@ -81,25 +87,54 @@ public class ViewReg extends Activity {
          * Since I want this application to support API lvl 4+ we have to use
          * the old method.
          */
-        CharSequence clipTxt = clipboard.getText();
+
 
         //This is the new, non-deprecated way of getting text from the Clipboard.
         //CharSequence clipTxt = clipboard.getPrimaryClip().getItemAt(0).getText();
 
 
-        //If the clipboard has text, and it is more than 0 characters.
-        if((null != clipTxt) && (clipTxt.length() > 0)){
-            try {
-                qrTxt.setText(clipTxt);
-                copiedStr = clipTxt.toString();
-                fullUrl += URLEncoder.encode(copiedStr, "UTF-8");
-                imgLoader.displayImage(fullUrl, qrImg);
 
-            } catch (UnsupportedEncodingException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+
+
+
+
+
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.activity_listview,array);
+        ListView listView=(ListView) findViewById(R.id.listView);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String product = ((TextView) view).getText().toString();
+                qrTxt.setText(product);
+
+                final CharSequence  clipTxt = qrTxt.getText();
+
+                Toast.makeText(getApplicationContext(),qrTxt.getText(), Toast.LENGTH_SHORT).show();
+                if((null != clipTxt) && (clipTxt.length() > 0)){
+                    try {
+                        qrTxt.setText(clipTxt);
+                        copiedStr = clipTxt.toString();
+                        fullUrl += URLEncoder.encode(copiedStr, "UTF-8");
+                        imgLoader.displayImage(fullUrl, qrImg);
+
+                    } catch (UnsupportedEncodingException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+
+                }
             }
+        });
 
-        }
+
     }
+    public void ViewQr(){
+
+        Intent intent = new Intent(this,qrcode.class);
+        intent.putExtra(copiedStr,"qrt");
+        startActivity(intent);
+    }
+
 }
