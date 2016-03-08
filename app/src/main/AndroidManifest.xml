@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activities.Main"
-            android:theme="@style/TransitionSampleActivity">
+            android:theme="@style/TransitionSampleActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,13 +21,18 @@
         </activity>
         <activity
             android:name=".activities.Registration"
-            android:theme="@style/TransitionSampleSecondActivity" />
+            android:theme="@style/TransitionSampleSecondActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".myapplication.RegistrationMain"
-            android:theme="@style/TransitionSampleSecondActivity" />
-        <activity android:name=".myapplication.ViewReg" />
-        <activity android:name=".activities.Events" />
-        <activity android:name=".myapplication.qrcode"></activity>
+            android:theme="@style/TransitionSampleSecondActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".myapplication.ViewReg"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.Events"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".myapplication.qrcode"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

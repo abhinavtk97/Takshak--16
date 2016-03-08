@@ -40,10 +40,12 @@ public class ViewReg extends Activity {
     String BASE_QR_URL = "http://chart.apis.google.com/chart?cht=qr&chs=400x400&chld=M&choe=UTF-8&chl=";
     String fullUrl = BASE_QR_URL;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_reg);
+
 
         rowContainer = (LinearLayout) findViewById(R.id.row_container2);
         Slide slideExitTransition = new Slide(Gravity.BOTTOM);
@@ -75,30 +77,6 @@ public class ViewReg extends Activity {
         qrImg = (ImageView)findViewById(R.id.qrcode);
         qrTxt = (TextView)findViewById(R.id.textView1);
 
-
-
-        clipboard = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
-
-
-
-        /*
-         * clipboard.getText() is now deprecated. But I am going to use it here
-         * because the new way of doing the same thing only works on API lvl 11+
-         * Since I want this application to support API lvl 4+ we have to use
-         * the old method.
-         */
-
-
-        //This is the new, non-deprecated way of getting text from the Clipboard.
-        //CharSequence clipTxt = clipboard.getPrimaryClip().getItemAt(0).getText();
-
-
-
-
-
-
-
-
         ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.activity_listview,array);
         ListView listView=(ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
@@ -110,6 +88,7 @@ public class ViewReg extends Activity {
                 qrTxt.setText(product);
 
                 final CharSequence  clipTxt = qrTxt.getText();
+
 
                 Toast.makeText(getApplicationContext(),qrTxt.getText(), Toast.LENGTH_SHORT).show();
                 if((null != clipTxt) && (clipTxt.length() > 0)){
@@ -130,10 +109,13 @@ public class ViewReg extends Activity {
 
 
     }
-    public void ViewQr(){
+    public void ViewQr(View view){
+        String copiedStr1;
+
 
         Intent intent = new Intent(this,qrcode.class);
-        intent.putExtra(copiedStr,"qrt");
+        copiedStr1 = qrTxt.getText().toString();
+        intent.putExtra("qrt",copiedStr1);
         startActivity(intent);
     }
 

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.ClipboardManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -32,6 +33,7 @@ public class qrcode extends Activity {
         setContentView(R.layout.activity_qrcode);
         Intent intent=getIntent();
         String as=intent.getStringExtra("qrt");
+        Toast.makeText(getApplicationContext(),as, Toast.LENGTH_LONG).show();
 
 
 
@@ -46,7 +48,8 @@ public class qrcode extends Activity {
 
 
 
-        clipboard = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+
+
 
         final CharSequence  clipTxt = qrTxt.getText();
 

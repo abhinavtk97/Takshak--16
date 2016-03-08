@@ -2,14 +2,19 @@ package com.saulmm.material.activities;
 
 import android.animation.Animator;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.transition.Transition;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.saulmm.material.DatabaseOperations;
 import com.saulmm.material.R;
 import com.saulmm.material.utils.AnimatorAdapter;
 import com.saulmm.material.utils.TransitionAdapter;
@@ -18,6 +23,9 @@ public class Registration extends Activity {
 
     private static final int SCALE_DELAY = 30;
     private LinearLayout rowContainer;
+    String username,email,phone,college;
+    Context ctx = this;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +37,7 @@ public class Registration extends Activity {
 
 
 
-        Spinner dropdown = (Spinner)findViewById(R.id.spinner);
+        Spinner dropdown = (Spinner)findViewById(R.id.college);
         String[] items = new String[]{"Select College","1", "2", "three"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
@@ -52,6 +60,22 @@ public class Registration extends Activity {
                 }
             }
         });
+    }
+
+    public void onClick(View view){
+        final EditText USER_NAME= (EditText)findViewById(R.id.name);
+        final EditText EMAIL= (EditText)findViewById(R.id.mail);
+        final EditText PHONE= (EditText)findViewById(R.id.phone);
+        final Spinner COLLEGE= (Spinner)findViewById(R.id.college);
+        username=USER_NAME.getText().toString();
+        email=EMAIL.getText().toString();
+        phone=PHONE.getText().toString();
+        college=COLLEGE.getSelectedItem().toString();
+
+        DatabaseOperations DB = new DatabaseOperations(ctx);
+        DB.putInformation(DB, username, email, phone, college);
+        Toast.makeText(getApplicationContext(), "YAAY", Toast.LENGTH_LONG).show();
+
     }
 
     @Override
