@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.saulmm.material">
+    package="in.ac.mace.in">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,7 +10,7 @@
         android:label="Takshak&apos;16"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.Main"
+            android:name="in.ac.mace.in.activities.Main"
             android:theme="@style/TransitionSampleActivity"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -20,18 +20,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.Registration"
+            android:name="in.ac.mace.in.activities.Registration"
             android:theme="@style/TransitionSampleSecondActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".myapplication.RegistrationMain"
+            android:name="in.ac.mace.in.myapplication.RegistrationMain"
             android:theme="@style/TransitionSampleSecondActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".myapplication.ViewReg"
+        <activity android:name="in.ac.mace.in.myapplication.ViewReg"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activities.Events"
+        <activity android:name="in.ac.mace.in.activities.Events"
             android:screenOrientation="portrait"/>
-        <activity android:name=".myapplication.qrcode"
+        <activity android:name="in.ac.mace.in.myapplication.qrcode"
             android:screenOrientation="portrait"></activity>
     </application>
 

@@ -1,4 +1,4 @@
-package com.saulmm.material.utils;
+package in.ac.mace.in.utils;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -11,7 +11,7 @@ import android.view.ViewPropertyAnimator;
 import android.view.Window;
 import android.view.animation.PathInterpolator;
 
-import com.saulmm.material.R;
+import in.ac.mace.in.R;
 
 public class GUIUtils {
 

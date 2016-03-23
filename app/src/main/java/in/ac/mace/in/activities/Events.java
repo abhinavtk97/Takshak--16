@@ -1,20 +1,15 @@
-package com.saulmm.material.activities;
+package in.ac.mace.in.activities;
 
-import android.animation.Animator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.transition.Slide;
 import android.transition.Transition;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 
-import com.saulmm.material.R;
-import com.saulmm.material.utils.AnimatorAdapter;
-import com.saulmm.material.utils.TransitionAdapter;
+import in.ac.mace.in.R;
+import in.ac.mace.in.utils.TransitionAdapter;
 
 
 public class Events extends Activity {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.saulmm.material.views.widgets;
+package in.ac.mace.in.views.widgets;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -29,7 +29,7 @@ import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 
-import com.saulmm.material.R;
+import in.ac.mace.in.R;
 
 import java.util.ArrayList;
 

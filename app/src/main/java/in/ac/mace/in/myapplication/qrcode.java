@@ -1,7 +1,6 @@
-package com.saulmm.material.myapplication;
+package in.ac.mace.in.myapplication;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.ClipboardManager;
@@ -11,7 +10,7 @@ import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.saulmm.material.R;
+import in.ac.mace.in.R;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

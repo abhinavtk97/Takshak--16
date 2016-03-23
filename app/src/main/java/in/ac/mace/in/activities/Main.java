@@ -1,4 +1,4 @@
-package com.saulmm.material.activities;
+package in.ac.mace.in.activities;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
@@ -9,8 +9,8 @@ import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
 
-import com.saulmm.material.R;
-import com.saulmm.material.myapplication.RegistrationMain;
+import in.ac.mace.in.R;
+import in.ac.mace.in.myapplication.RegistrationMain;
 
 public class Main extends Activity {
 

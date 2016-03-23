@@ -1,4 +1,4 @@
-package com.saulmm.material.activities;
+package in.ac.mace.in.activities;
 
 import android.animation.Animator;
 import android.app.Activity;
@@ -8,16 +8,15 @@ import android.transition.Transition;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.saulmm.material.DatabaseOperations;
-import com.saulmm.material.R;
-import com.saulmm.material.utils.AnimatorAdapter;
-import com.saulmm.material.utils.TransitionAdapter;
+import in.ac.mace.in.BackgroundTask;
+import in.ac.mace.in.R;
+import in.ac.mace.in.utils.AnimatorAdapter;
+import in.ac.mace.in.utils.TransitionAdapter;
 
 public class Registration extends Activity {
 
@@ -71,10 +70,31 @@ public class Registration extends Activity {
         email=EMAIL.getText().toString();
         phone=PHONE.getText().toString();
         college=COLLEGE.getSelectedItem().toString();
+        String x = "Select College";
+        int flag1=0,flag2=0,flag3=0;
+        if(phone.length()==10){
+             flag1=1;
+        }
+        if(username.length()>4){
+            flag2=1;
+        }
+        if(email.contains("@")&&!email.contains(" ")){
+            flag3=1;
 
-        DatabaseOperations DB = new DatabaseOperations(ctx);
-        DB.putInformation(DB, username, email, phone, college);
-        Toast.makeText(getApplicationContext(), "YAAY", Toast.LENGTH_LONG).show();
+        }
+
+
+        if(college!=x&&flag1==1&&flag2==1&&flag3==1){
+            BackgroundTask backgroundTask = new BackgroundTask(this);
+            backgroundTask.execute("add_info",username,email,phone,college);
+
+            Toast.makeText(getApplicationContext(),"Successfully Registered", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Toast.makeText(getApplicationContext(),"Please review the registration",Toast.LENGTH_SHORT).show();
+        }
+
+
 
     }
 

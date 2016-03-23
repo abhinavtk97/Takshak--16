@@ -1,17 +1,19 @@
-package com.saulmm.material.myapplication;
+package in.ac.mace.in.myapplication;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.transition.Slide;
+import android.util.Log;
 import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
-import com.saulmm.material.R;
+
+import in.ac.mace.in.R;
 
 
-import com.saulmm.material.activities.Registration;
+import in.ac.mace.in.activities.Registration;
 
 
 public class RegistrationMain extends Activity {
@@ -49,14 +51,13 @@ public class RegistrationMain extends Activity {
         startActivity(i,option.toBundle());
     }
     public void onFabPressedReg1(View view) {
-
+        Log.d("Hell no", "onFabPressedReg1: ");
         Intent i  = new Intent (this,
                 ViewReg.class);
-
         ActivityOptions option =ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(mFabButton, "fab"), Pair.create(mHeader, "holder1"),
                 Pair.create(mLogo, "logo"), Pair.create(mHeader1, "holder2"));
+        startActivity(i, option.toBundle());
 
-        startActivity(i,option.toBundle());
     }
 
 

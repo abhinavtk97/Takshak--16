@@ -1,12 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:minHeight="50dp"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="70dp"
+    android:layout_width="match_parent"
+    android:background="#ffffff">
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:id="@+id/listitems"
+    android:id="@+id/t_name"
+    android:text="Name"
     android:textSize="30dp"
-    android:gravity="center_vertical"
-    android:paddingLeft="10dp">
+    android:layout_weight="1"
+    android:gravity="center"
+    android:padding="6dp"
+    android:paddingLeft="10dp"
+    android:elevation="0dp"
+    android:onClick="viewqrmain"
+    android:background="#ffffff">
+</Button>
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/l2">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="20dp"
+        android:id="@+id/t_mail"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:text="Mail"
+        android:background="#ffffff"
+        android:elevation="0dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:id="@+id/t_college"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:text="College"
+            android:background="#ffffff"
+            android:elevation="0dp" />
 
-</TextView>
+    </LinearLayout>
+
+</LinearLayout>
