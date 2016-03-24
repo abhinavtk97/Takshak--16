@@ -79,7 +79,9 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:text="@string/Registration"
+            android:background="#ffffff"
             android:id="@+id/button_register"
+            android:elevation="0dp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:onClick="onFabPressed"/>
@@ -88,6 +90,8 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:text="@string/Eventsandprogrammes"
+            android:background="#ffffff"
+            android:elevation="0dp"
             android:id="@+id/button"
             android:layout_below="@+id/button_register"
             android:layout_centerHorizontal="true"

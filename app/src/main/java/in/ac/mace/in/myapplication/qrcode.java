@@ -22,7 +22,6 @@ public class qrcode extends Activity {
     ImageView qrImg;
     String copiedStr;
     TextView qrTxt;
-    ClipboardManager clipboard;
     String BASE_QR_URL = "http://chart.apis.google.com/chart?cht=qr&chs=400x400&chld=M&choe=UTF-8&chl=";
     String fullUrl = BASE_QR_URL;
 

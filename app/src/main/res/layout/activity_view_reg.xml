@@ -49,20 +49,13 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/qrcode"
                 android:background="#FFF"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:onClick="ViewQr"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:id="@+id/textView1"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="No Registrations Yet"
-                android:id="@+id/textView3"
-                android:layout_gravity="center_horizontal" />
 
 
         </LinearLayout>

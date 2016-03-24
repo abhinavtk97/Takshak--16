@@ -92,4 +92,14 @@
         android:elevation="5dp"
 
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Registration"
+        android:padding="9dp"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/fab_button"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -3,6 +3,7 @@ package in.ac.mace.in.activities;
 import android.animation.Animator;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.transition.Transition;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import in.ac.mace.in.BackgroundTask;
 import in.ac.mace.in.R;
+import in.ac.mace.in.RegComp;
 import in.ac.mace.in.utils.AnimatorAdapter;
 import in.ac.mace.in.utils.TransitionAdapter;
 
@@ -94,6 +96,13 @@ public class Registration extends Activity {
             Toast.makeText(getApplicationContext(),"Please review the registration",Toast.LENGTH_SHORT).show();
         }
 
+        Intent intent = new Intent(this, RegComp.class);
+        intent.putExtra("name",username);
+        intent.putExtra("mail",email);
+        intent.putExtra("phone",phone);
+        intent.putExtra("college",college);
+        startActivity(intent);
+
 
 
     }
@@ -119,4 +128,6 @@ public class Registration extends Activity {
                 });
         }
     }
+
+
 }

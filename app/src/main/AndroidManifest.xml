@@ -10,9 +10,9 @@
         android:label="Takshak&apos;16"
         android:theme="@style/AppTheme">
         <activity
-            android:name="in.ac.mace.in.activities.Main"
-            android:theme="@style/TransitionSampleActivity"
-            android:screenOrientation="portrait">
+            android:name=".activities.Main"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransitionSampleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,19 +20,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="in.ac.mace.in.activities.Registration"
-            android:theme="@style/TransitionSampleSecondActivity"
-            android:screenOrientation="portrait"/>
+            android:name=".activities.Registration"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransitionSampleSecondActivity" />
         <activity
-            android:name="in.ac.mace.in.myapplication.RegistrationMain"
-            android:theme="@style/TransitionSampleSecondActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="in.ac.mace.in.myapplication.ViewReg"
-            android:screenOrientation="portrait"/>
-        <activity android:name="in.ac.mace.in.activities.Events"
-            android:screenOrientation="portrait"/>
-        <activity android:name="in.ac.mace.in.myapplication.qrcode"
-            android:screenOrientation="portrait"></activity>
+            android:name=".myapplication.RegistrationMain"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransitionSampleSecondActivity" />
+        <activity
+            android:name=".myapplication.ViewReg"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Events"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".myapplication.qrcode"
+            android:screenOrientation="portrait" />
+        <activity android:name=".RegComp"></activity>
     </application>
 
 </manifest>

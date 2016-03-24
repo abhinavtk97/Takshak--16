@@ -1,38 +1,17 @@
 package in.ac.mace.in;
 
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
-import android.text.ClipboardManager;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 
 /**
  * Created by Abhinav on 3/23/2016.
  */
 public class BackgroundTask extends AsyncTask<String,Data,String> {
-
-    ImageLoader imgLoader;
-    ImageView qrImg;
-    String copiedStr;
-    TextView qrTxt;
-    ClipboardManager clipboard;
-
-    String BASE_QR_URL = "http://chart.apis.google.com/chart?cht=qr&chs=400x400&chld=M&choe=UTF-8&chl=";
-    String fullUrl = BASE_QR_URL;
 
     Context ctx;
     DataAdapter dataAdapter;
@@ -96,37 +75,5 @@ public class BackgroundTask extends AsyncTask<String,Data,String> {
         else {
             Toast.makeText(ctx, result, Toast.LENGTH_LONG).show();
         }
-
-        /*ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
-        imgLoader = ImageLoader.getInstance();
-        imgLoader.init(config);
-
-        qrImg = (ImageView)findViewById(R.id.qrcode);
-        qrTxt = (TextView)findViewById(R.id.textView1);}
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                String product = ((TextView) view).getText().toString();
-                qrTxt.setText(product);
-
-                final CharSequence  clipTxt = qrTxt.getText();
-
-
-                Toast.makeText(getApplicationContext(),qrTxt.getText(), Toast.LENGTH_SHORT).show();
-                if((null != clipTxt) && (clipTxt.length() > 0)){
-                    try {
-                        qrTxt.setText(clipTxt);
-                        copiedStr = clipTxt.toString();
-                        fullUrl += URLEncoder.encode(copiedStr, "UTF-8");
-                        imgLoader.displayImage(fullUrl, qrImg);
-
-                    } catch (UnsupportedEncodingException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-
-                }
-            }*/
-
-        }}
+    }
+}

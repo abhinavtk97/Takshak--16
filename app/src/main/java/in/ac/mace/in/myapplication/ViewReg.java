@@ -1,20 +1,21 @@
 package in.ac.mace.in.myapplication;
 
+/**
+ * Created by Abhinav on 3/23/2016.
+ */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.ClipboardManager;
 import android.transition.Slide;
 import android.transition.Transition;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,24 +26,23 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 import in.ac.mace.in.BackgroundTask;
-import in.ac.mace.in.DataAdapter;
 import in.ac.mace.in.R;
 import in.ac.mace.in.utils.TransitionAdapter;
 
 public class ViewReg extends Activity {
 
-    private SimpleCursorAdapter dataAdapter;
+
 
     private static final int SCALE_DELAY = 30;
     private LinearLayout rowContainer;
-    String[] array = {"afvkjfvkgcg","jdfgciycb","vkvkuvuyhc","jdfgciycb","vkvkuvuyhc","jdfgciycb","vkvkuvuyhc","ufuifwfiugwf","fvkhavajk","adgkyuhagdkyhad"};
+
 
     ImageLoader imgLoader;
     ImageView qrImg;
     String copiedStr;
     TextView qrTxt;
-    ListView listView = (ListView)findViewById(R.id.listView);
-    ClipboardManager clipboard;
+
+
 
     String BASE_QR_URL = "http://chart.apis.google.com/chart?cht=qr&chs=400x400&chld=M&choe=UTF-8&chl=";
     String fullUrl = BASE_QR_URL;
@@ -50,7 +50,9 @@ public class ViewReg extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("hi,", "new");
         Toast.makeText(getApplicationContext(), "Finally", Toast.LENGTH_SHORT).show();
+        ListView listView = (ListView)findViewById(R.id.listView);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_reg);
@@ -87,15 +89,15 @@ public class ViewReg extends Activity {
         imgLoader.init(config);
 
         qrImg = (ImageView)findViewById(R.id.qrcode);
-        qrTxt = (TextView)findViewById(R.id.textView1);}
+        qrTxt = (TextView)findViewById(R.id.textView1);
+    }
 
-
-
-
-       public void viewqrmain(){
+       public void viewqrmain(View view){
+           Log.d("f#","f#");
            Toast.makeText(getApplicationContext(),"f*",Toast.LENGTH_LONG).show();
-                View view=findViewById(R.id.t_name);
-                String product = ((Button) view).getText().toString();
+
+           String product = ((Button) view).getText().toString();
+
                 qrTxt.setText(product);
 
 
